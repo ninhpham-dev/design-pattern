@@ -53,14 +53,14 @@ class DisplayOnScreen implements DisplayMethod {
 }
 
 // Concrete Implementor
-class PrintOnPaper implements DisplayMethod {
+class DisplayOnPaper implements DisplayMethod {
     public function display() {
         echo "on paper.<hr>";
     }
 }
 
 // Concrete Implementor
-class PrintOnMobile implements DisplayMethod {
+class DisplayOnMobile implements DisplayMethod {
     public function display() {
         echo "on mobile.<hr>";
     }
@@ -71,10 +71,10 @@ $screenDisplay = new DisplayOnScreen();
 $pdfDocument = new PDF($screenDisplay);
 $pdfDocument->display();
 
-$paperPrint = new PrintOnPaper();
+$paperPrint = new DisplayOnPaper();
 $wordDocument = new Word($paperPrint);
 $wordDocument->display();
 
-$paperPrint = new PrintOnMobile();
+$paperPrint = new DisplayOnMobile();
 $wordDocument = new Excel($paperPrint);
 $wordDocument->display();

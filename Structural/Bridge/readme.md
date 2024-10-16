@@ -58,7 +58,7 @@ classDiagram
     PowerPoint--> PowerPointPrintOnScreen
 
 ```
-    - Giờ ta có yêu cầu là thêm tài loại liệu dạng Excel và cần hiển thị các tài liệu trên thiết bị di động. Khi này ta sẽ phải tạo rất nhiều class,điều này tạo ra một hệ thống cồng kềnh và khó bảo trì.để xử lý
+- Giờ ta có yêu cầu là thêm tài loại liệu dạng Excel và cần hiển thị các tài liệu trên thiết bị di động. Khi này ta sẽ phải tạo rất nhiều class,điều này tạo ra một hệ thống cồng kềnh và khó bảo trì.để xử lý
 
 2. **Cách giải quyết**
     - Ta thấy tài liệu và cách hiển thị rất phụ thuộc với nhau, vậy ta sẽ chia thành 2 phần tách biệt là tài liệu (Abstraction) và cách hiển thị (Implementation). Điều này sẽ giúp mở rộng rất linh hoạt. Và cách hoạt động như sơ đồ sau:
@@ -93,11 +93,11 @@ classDiagram
         +display()
     }
 
-    class PrintOnPaper {
+    class DisplayOnPaper {
         +display()
     }
 
-    class PrintOnMobile {
+    class DisplayOnMobile {
         +display()
     }
 
@@ -107,8 +107,8 @@ classDiagram
     Document <|-- Excel
     Document o-- DisplayMethod
     DisplayMethod <|.. DisplayOnScreen
-    DisplayMethod <|.. PrintOnPaper
-    DisplayMethod <|.. PrintOnMobile
+    DisplayMethod <|.. DisplayOnPaper
+    DisplayMethod <|.. DisplayOnMobile
 
 ```
 
